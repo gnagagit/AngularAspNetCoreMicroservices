@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  angularwebui:
+    image: ${DOCKER_REGISTRY}angularwebui
+    build:
+      context: .
+      dockerfile: AngularWebUI/Dockerfile
+    depends_on:
+      - aspnetcoremicroservices.apigateway
+      - aspnetcoremicroservices.products
+      - aspnetcoremicroservices.customers
+
+  aspnetcoremicroservices.apigateway:
+    image: ${DOCKER_REGISTRY}aspnetcoremicroservicesapigateway
+    build:
+      context: .
+      dockerfile: AspNetCoreMicroservices.ApiGateway/Dockerfile
+    depends_on:
+      - aspnetcoremicroservices.products
+      - aspnetcoremicroservices.customers
+
+  aspnetcoremicroservices.customers:
+    image: ${DOCKER_REGISTRY}aspnetcoremicroservicescustomers
+    build:
+      context: .
+      dockerfile: AspNetCoreMicroservices.Customers/Dockerfile
+  aspnetcoremicroservices.products:
+    image: ${DOCKER_REGISTRY}aspnetcoremicroservicesproducts
+    build:
+      context: .
+      dockerfile: AspNetCoreMicroservices.Products/Dockerfile
+
+
+
+
+      
+
+

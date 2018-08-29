@@ -1,0 +1,65 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1><strong>Angular with AspNet Core Microservices and API Gateway</strong></h1>
+</div>
+<br /><br />  <br /><br /> 
+<div>
+  <button (click)='onCustomersClick()'><strong>View Customers Microservices</strong> </button>
+  <br /><br />
+  <button (click)='onProductsClick()'><strong>View Products Microservices</strong></button>
+  <br /><br />
+  <button (click)='onAPIGatewayCustomersClick()'><strong>View APIGateway Customers Microservices</strong></button>
+  <br /><br />
+  <button (click)='onAPIGatewayProductsClick()'><strong>View APIGateway Products Microservices</strong></button>
+</div>
+<br /><br /> <br /><br />
+
+<!--<div>
+  <button (click)='getcustomers()'><strong>Customer Name</strong> </button>
+  <br /><br />
+</div>
+<div *ngFor='let customer of customers'>
+  <p>{{customer.customername}}</p>
+</div>
+<p *ngIf="!customers || customers.length==0">NO JSON Data</p>-->
+
+
+<div *ngIf="showCustomers">
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let customer of customers'>
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+      </tr>
+      <tr *ngIf="!customers || customers.length==0">
+        <td colspan="2">NO JSON Data</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="showProducts">
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products'>
+        <td>{{product.id}}</td>
+        <td>{{product.description}}</td>
+      </tr>
+      <tr *ngIf="!products || products.length==0">
+        <td colspan="2">NO JSON Data</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
