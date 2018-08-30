@@ -5,8 +5,8 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>1b20dd05-6680-474f-b32b-4832e5be698b</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}</DockerServiceUrl>
-    <DockerServiceName>angularwebui</DockerServiceName>
+    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/api/customers</DockerServiceUrl>
+    <DockerServiceName>aspnetcoremicroservices.customers</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
